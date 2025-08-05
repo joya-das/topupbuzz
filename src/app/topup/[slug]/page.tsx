@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag } from "lucide-react";
+import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle } from "lucide-react";
 import Link from 'next/link';
 
 const productData: { [key: string]: any } = {
@@ -38,12 +38,16 @@ const productData: { [key: string]: any } = {
 
 export default function TopUpPage({ params }: { params: { slug: string } }) {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
+  const [selectedPayment, setSelectedPayment] = useState('wallet');
+
   const product = productData[params.slug] || {
     name: decodeURIComponent(params.slug).replace(/-/g, ' '),
     image: 'https://placehold.co/80x80.png',
     category: 'Game / Top up',
     rechargeOptions: []
   };
+
+  const selectedPrice = product.rechargeOptions.find((opt:any) => opt.id === selectedOption)?.price.split(' ')[0] || 0;
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f0f2f5] dark:bg-[#040d1c]">
@@ -110,7 +114,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                 </Label>
               ))}
             </RadioGroup>
-            <div className="text-center mt-4">
+            <div className="text-left mt-4">
               <a href="#" className="text-sm text-red-600 font-bangla hover:underline">
                 কিভাবে অর্ডার করবেন ?
               </a>
@@ -136,6 +140,69 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
              </Button>
           </CardContent>
         </Card>
+
+        <Card className="bg-white dark:bg-[#0f1b2a] dark:border-gray-800">
+            <CardHeader>
+                <CardTitle className="flex items-center">
+                <span className="bg-[#0f1b2a] dark:bg-slate-700 text-white rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">3</span>
+                <span className="text-gray-900 dark:text-white">Select one option</span>
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <RadioGroup value={selectedPayment} onValueChange={setSelectedPayment} className="grid grid-cols-2 gap-4">
+                    <div>
+                        <RadioGroupItem value="wallet" id="wallet" className="peer sr-only" />
+                        <Label htmlFor="wallet" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer relative">
+                            <div className="absolute top-0 left-0 w-full h-full">
+                                <div className="absolute top-0 left-0 text-white p-1 z-10">
+                                    <div className="bg-red-500 w-6 h-6 flex items-center justify-center rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <Image src="https://placehold.co/120x40.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
+                             <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md">Wallet Pay</span>
+                        </Label>
+                    </div>
+                    <div>
+                        <RadioGroupItem value="instant" id="instant" className="peer sr-only" />
+                        <Label htmlFor="instant" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
+                            <div className="flex gap-2">
+                                <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="bKash" data-ai-hint="bkash logo" />
+                                <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Nagad" data-ai-hint="nagad logo" />
+                                <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Rocket" data-ai-hint="rocket logo" />
+                            </div>
+                             <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md">Instant Pay</span>
+                        </Label>
+                    </div>
+                </RadioGroup>
+                <div className="font-bangla space-y-2 mt-4 text-sm text-gray-800 dark:text-gray-300">
+                    <div className="flex items-center gap-2">
+                        <Info className="w-4 h-4" />
+                        <span>আপনার অ্যাকাউন্ট ব্যালেন্স ৳ 0.00</span>
+                        <RefreshCw className="w-4 h-4 cursor-pointer" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Info className="w-4 h-4" />
+                        <span>প্রোডাক্ট কিনতে আপনার প্রয়োজন ৳ {selectedPrice}</span>
+                    </div>
+                </div>
+                <Button className="w-full mt-4 bg-[#0f1b2a] dark:bg-slate-800 text-white hover:bg-slate-700 dark:hover:bg-slate-700">Buy Now</Button>
+            </CardContent>
+        </Card>
+
+        <Card className="bg-white dark:bg-[#0f1b2a] dark:border-gray-800 font-bangla">
+            <CardHeader>
+                <CardTitle className="text-gray-900 dark:text-white">Rules & Conditions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-sm text-gray-800 dark:text-gray-300">
+                <p>⦿ শুধুমাত্র Bangladesh সার্ভারে ID Code দিয়ে টপ আপ হবে</p>
+                <p>⦿ Player ID ভুল দিয়ে Diamond না পেলে TopUp Buzz কর্তৃপক্ষ দায়ী নয়</p>
+                <p>⦿ Order কমপ্লিট হওয়ার পরেও আইডিতে ডাইমন্ড না গেলে চেক করার জন্য ID Pass দিতে হবে</p>
+                <p>⦿ অর্ডার Cancel হলে কি কারণে তা Cancel হয়েছে তা অর্ডার হিস্টোরিতে দেওয়া থাকে অনুগ্রহ পূর্বক দেখে পুনরায় সঠিক তথ্য দিয়ে অর্ডার করবেন।</p>
+            </CardContent>
+        </Card>
+
       </main>
 
        <div className="fixed bottom-24 right-4 z-50">
