@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { X, Phone } from "lucide-react";
 import { DismissibleAlert } from "@/components/dismissible-alert";
+import { HomeIcon, Briefcase, MessageSquareHeart, User } from "lucide-react";
 
 const topUpOptions = [
   { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character" },
@@ -18,8 +17,8 @@ const topUpOptions = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-white text-gray-800 shadow-md sticky top-0 z-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 pb-20">
+      <header className="bg-white/70 backdrop-blur-sm text-gray-800 shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
@@ -86,13 +85,28 @@ export default function Home() {
 
       </main>
 
-      <div className="fixed bottom-6 right-6 flex flex-col items-center space-y-2">
-        <Button variant="destructive" className="rounded-full shadow-lg">SUPPORT!</Button>
-        <Button size="icon" className="bg-red-600 hover:bg-red-700 text-white rounded-full w-14 h-14 shadow-lg">
-          <Phone className="h-7 w-7" />
-        </Button>
-      </div>
-
+      <footer className="fixed bottom-0 left-0 right-0 bg-white/70 backdrop-blur-sm border-t border-gray-200 z-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-around items-center h-16">
+            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
+              <HomeIcon className="w-6 h-6" />
+              <span className="text-xs">Home</span>
+            </a>
+            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
+              <Briefcase className="w-6 h-6" />
+              <span className="text-xs">Products</span>
+            </a>
+            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
+              <MessageSquareHeart className="w-6 h-6" />
+              <span className="text-xs">Support</span>
+            </a>
+            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
+              <User className="w-6 h-6" />
+              <span className="text-xs">Profile</span>
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
