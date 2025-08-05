@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Codes, UserCircle, Phone, Wallet, User } from "lucide-react";
+import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag } from "lucide-react";
 import Link from 'next/link';
 
 const productData: { [key: string]: any } = {
@@ -152,7 +152,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               <span className="text-xs">Home</span>
             </Link>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
-              <ShoppingBagIcon className="w-6 h-6" />
+              <ShoppingBag className="w-6 h-6" />
               <span className="text-xs">Add Money</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
@@ -160,7 +160,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               <span className="text-xs">My Orders</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
-              <Codes className="w-6 h-6" />
+              <Code className="w-6 h-6" />
               <span className="text-xs">My Codes</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
@@ -173,23 +173,3 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-
-// Dummy icon to avoid errors, replace with actual icon if available
-const ShoppingBagIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    {...props}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-    <line x1="3" x2="21" y1="6" y2="6" />
-    <path d="M16 10a4 4 0 0 1-8 0" />
-  </svg>
-);
