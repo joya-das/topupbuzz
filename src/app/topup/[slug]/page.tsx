@@ -40,8 +40,9 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
   const [selectedPayment, setSelectedPayment] = useState('wallet');
 
-  const product = productData[params.slug] || {
-    name: decodeURIComponent(params.slug).replace(/-/g, ' '),
+  const slug = params.slug;
+  const product = productData[slug] || {
+    name: decodeURIComponent(slug).replace(/-/g, ' '),
     image: 'https://placehold.co/80x80.png',
     category: 'Game / Top up',
     rechargeOptions: []
@@ -235,3 +236,4 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
       </footer>
     </div>
   );
+}
