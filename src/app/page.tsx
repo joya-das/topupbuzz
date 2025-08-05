@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import { DismissibleAlert } from "@/components/dismissible-alert";
-import { HomeIcon, Briefcase, MessageSquareHeart, User, Download, Send } from "lucide-react";
+import { HomeIcon, Play, Compass, MessageCircle, Send, Phone, Facebook, Youtube } from "lucide-react";
 
 const topUpOptions = [
   { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character" },
@@ -35,7 +35,7 @@ const moreGames = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 pb-20">
+    <div className="flex flex-col min-h-screen bg-gray-50 pb-40">
       <header className="bg-white/70 backdrop-blur-sm text-gray-800 shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -176,7 +176,51 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="fixed bottom-0 left-0 right-0 bg-white/70 backdrop-blur-sm border-t border-gray-200 z-50">
+      <div className="fixed bottom-24 right-4 z-50">
+          <div className="relative group">
+              <div className="absolute -left-24 bottom-1/2 translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  SUPPORT!
+              </div>
+              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14">
+                  <Phone className="w-6 h-6" />
+              </Button>
+          </div>
+      </div>
+      
+      <footer className="bg-[#0f1b2a] text-white pt-12 pb-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 className="text-lg font-bold mb-4">SUPPORT</h3>
+                    <a href="#" className="flex items-center gap-4 p-4 border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
+                        <Send className="w-6 h-6" />
+                        <div>
+                            <p className="text-sm">8AM - 12.00PM</p>
+                            <p className="font-semibold">Telegram HelpLine</p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <h3 className="text-lg font-bold mb-4">STAY CONNECTED</h3>
+                    <p className="font-bold">TopUp Buzz</p>
+                    <p className="text-sm">House #80 (13rd Floor) Road # 17, Nikanjia-5 Dhaka</p>
+                    <div className="flex gap-4 mt-4">
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
+                            <Facebook className="w-6 h-6" />
+                        </a>
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
+                            <Youtube className="w-6 h-6" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Tec Mahal</p>
+            </div>
+        </div>
+      </footer>
+
+      <div className="fixed bottom-0 left-0 right-0 bg-white/70 backdrop-blur-sm border-t border-gray-200 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-around items-center h-16">
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
@@ -184,20 +228,23 @@ export default function Home() {
               <span className="text-xs">Home</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
-              <Briefcase className="w-6 h-6" />
-              <span className="text-xs">Products</span>
+              <Play className="w-6 h-6" />
+              <span className="text-xs">Tutorial</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
-              <MessageSquareHeart className="w-6 h-6" />
-              <span className="text-xs">Support</span>
+              <Compass className="w-6 h-6" />
+              <span className="text-xs">TopUp</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-blue-600">
-              <User className="w-6 h-6" />
-              <span className="text-xs">Profile</span>
+                <div className="relative">
+                    <MessageCircle className="w-6 h-6" />
+                    <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
+                </div>
+              <span className="text-xs">Contact Us</span>
             </a>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
