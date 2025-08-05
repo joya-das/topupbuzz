@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube, Check } from "lucide-react";
+import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube, Check, Send } from "lucide-react";
 import Link from 'next/link';
 
 const productData: { [key: string]: any } = {
@@ -215,6 +215,39 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               <Phone className="w-6 h-6" />
           </Button>
       </div>
+      
+      <footer className="bg-[#0f1b2a] text-white pt-12 pb-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 className="text-lg font-bold mb-4">SUPPORT</h3>
+                    <a href="#" className="flex items-center gap-4 p-4 border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
+                        <Send className="w-6 h-6" />
+                        <div>
+                            <p className="text-sm">8AM - 12.00PM</p>
+                            <p className="font-semibold">Telegram HelpLine</p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <h3 className="text-lg font-bold mb-4">STAY CONNECTED</h3>
+                    <p className="font-bold">TopUp Buzz</p>
+                    <p className="text-sm">House #80 (13rd Floor) Road # 17, Nikanjia-5 Dhaka</p>
+                    <div className="flex gap-4 mt-4">
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
+                            <Facebook className="w-6 h-6" />
+                        </a>
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
+                            <Youtube className="w-6 h-6" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
+            </div>
+        </div>
+      </footer>
 
       <footer className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-200 z-50 dark:bg-[#0f1b2a]/90 dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -245,3 +278,5 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+
+    
