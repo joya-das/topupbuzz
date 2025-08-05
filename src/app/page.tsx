@@ -4,6 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from "next/image";
 import { DismissibleAlert } from "@/components/dismissible-alert";
 import { HomeIcon, Play, Compass, MessageCircle, Send, Phone, Facebook, Youtube } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const topUpOptions = [
   { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character" },
@@ -35,7 +36,7 @@ const moreGames = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 pb-40">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       <header className="bg-white/70 backdrop-blur-sm text-gray-800 shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -53,7 +54,16 @@ export default function Home() {
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
         <DismissibleAlert />
 
-        <Carousel className="w-full max-w-4xl mx-auto" opts={{ loop: true }}>
+        <Carousel 
+          className="w-full max-w-4xl mx-auto" 
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+            }),
+          ]}
+        >
           <CarouselContent>
             {Array.from({ length: 3 }).map((_, index) => (
               <CarouselItem key={index}>
@@ -170,7 +180,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="mt-8 p-4 rounded-lg bg-red-800 text-white text-center">
+        <div className="mt-8 p-4 rounded-lg bg-red-800 text-white text-center font-bangla">
             <p className="font-bold">ফেসবুক, ইউটিউব, টিকটক সহ সকল ধরনের Social Media সার্ভিস লাগলে আমাদের নতুন সাইটে অর্ডার করুন</p>
             <p>এখানে ক্লিক করুন</p>
         </div>
@@ -215,7 +225,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
-                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Tec Mahal</p>
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
             </div>
         </div>
       </footer>

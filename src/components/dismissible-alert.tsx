@@ -13,7 +13,7 @@ export function DismissibleAlert() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative font-bangla">
         <Alert variant="destructive" className="bg-[#0f1b2a] text-white border-0">
           <AlertTitle className="font-bold">Notice:</AlertTitle>
           <AlertDescription>
