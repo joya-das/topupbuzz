@@ -147,21 +147,27 @@ export default function Home() {
             </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-            <Button variant="outline" className="w-full h-auto py-4 text-lg">
-                <Download className="mr-2" />
-                <div>
-                    <p className="font-semibold">Download Our Mobile App</p>
-                    <p className="text-sm font-normal">Click Here</p>
-                </div>
-            </Button>
-            <Button variant="outline" className="w-full h-auto py-4 text-lg">
-                <Send className="mr-2" />
-                <div>
-                    <p className="font-semibold">Giveway & Offer Update</p>
-                    <p className="text-sm font-normal">Join Telegram</p>
-                </div>
-            </Button>
+        <div className="flex justify-center items-center gap-4 mt-8">
+          <a href="#" className="transition-transform hover:scale-105">
+            <Image
+              src="https://placehold.co/180x60.png"
+              alt="Get it on Google Play"
+              width={180}
+              height={60}
+              className="rounded-lg"
+              data-ai-hint="google play badge"
+            />
+          </a>
+          <a href="#" className="transition-transform hover:scale-105">
+            <Image
+              src="https://placehold.co/180x60.png"
+              alt="Download on the App Store"
+              width={180}
+              height={60}
+              className="rounded-lg"
+              data-ai-hint="app store badge"
+            />
+          </a>
         </div>
 
         <div className="mt-8 p-4 rounded-lg bg-red-800 text-white text-center">
