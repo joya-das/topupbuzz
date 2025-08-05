@@ -51,10 +51,12 @@ export default function Home() {
                 <span className="text-red-600">BUZZ</span>
               </h1>
             </div>
-            <Button variant="outline" className="dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-              <User className="mr-2 h-4 w-4" />
-              Login
-            </Button>
+            <Link href="/login">
+              <Button variant="outline" className="dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <User className="mr-2 h-4 w-4" />
+                Login
+              </Button>
+            </Link>
           </div>
         </div>
       </header>

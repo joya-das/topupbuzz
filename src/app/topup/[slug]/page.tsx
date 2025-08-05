@@ -152,7 +152,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
   const selectedPrice = product.rechargeOptions.find((opt:any) => opt.id === selectedOption)?.price.split(' ')[0] || 0;
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#f0f2f5] dark:bg-[#040d1c]">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-[#040d1c]">
        <header className="bg-white/90 dark:bg-[#0f1b2a]/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
