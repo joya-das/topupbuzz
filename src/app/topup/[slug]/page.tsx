@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle } from "lucide-react";
+import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube } from "lucide-react";
 import Link from 'next/link';
 
 const productData: { [key: string]: any } = {
@@ -72,7 +72,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      <main className="flex-grow container mx-auto p-4 space-y-4">
+      <main className="flex-grow container mx-auto p-4 space-y-4 pb-32">
         <Card className="overflow-hidden bg-white dark:bg-[#0f1b2a] dark:border-gray-800">
           <CardContent className="p-4 flex items-center gap-4">
             <Image
@@ -150,31 +150,27 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
             </CardHeader>
             <CardContent>
                 <RadioGroup value={selectedPayment} onValueChange={setSelectedPayment} className="grid grid-cols-2 gap-4">
-                    <div>
+                    <Label htmlFor="wallet" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer relative transition-colors ${ selectedPayment === 'wallet' ? 'border-primary' : 'border-muted'}`}>
                         <RadioGroupItem value="wallet" id="wallet" className="peer sr-only" />
-                        <Label htmlFor="wallet" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer relative">
-                            <div className="absolute top-0 left-0 w-full h-full">
-                                <div className="absolute top-0 left-0 text-white p-1 z-10">
-                                    <div className="bg-red-500 w-6 h-6 flex items-center justify-center rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <Image src="https://placehold.co/120x40.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
-                             <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md">Wallet Pay</span>
-                        </Label>
-                    </div>
-                    <div>
-                        <RadioGroupItem value="instant" id="instant" className="peer sr-only" />
-                        <Label htmlFor="instant" className="flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer">
-                            <div className="flex gap-2">
-                                <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="bKash" data-ai-hint="bkash logo" />
-                                <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Nagad" data-ai-hint="nagad logo" />
-                                <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Rocket" data-ai-hint="rocket logo" />
-                            </div>
-                             <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md">Instant Pay</span>
-                        </Label>
-                    </div>
+                        <div className={`absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full transition-colors ${ selectedPayment === 'wallet' ? 'bg-red-500' : 'bg-gray-300'}`}>
+                           {selectedPayment === 'wallet' && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
+                        </div>
+                        <Image src="https://placehold.co/120x40.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
+                        <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md text-sm">Wallet Pay</span>
+                    </Label>
+
+                    <Label htmlFor="instant" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer transition-colors ${ selectedPayment === 'instant' ? 'border-primary' : 'border-muted'}`}>
+                         <RadioGroupItem value="instant" id="instant" className="peer sr-only" />
+                        <div className={`absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full transition-colors ${ selectedPayment === 'instant' ? 'bg-red-500' : 'bg-gray-300'}`}>
+                           {selectedPayment === 'instant' && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
+                        </div>
+                        <div className="flex gap-2">
+                            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="bKash" data-ai-hint="bkash logo" />
+                            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Nagad" data-ai-hint="nagad logo" />
+                            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Rocket" data-ai-hint="rocket logo" />
+                        </div>
+                        <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md text-sm">Instant Pay</span>
+                    </Label>
                 </RadioGroup>
                 <div className="font-bangla space-y-2 mt-4 text-sm text-gray-800 dark:text-gray-300">
                     <div className="flex items-center gap-2">
@@ -239,4 +235,3 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
       </footer>
     </div>
   );
-}
