@@ -17,6 +17,8 @@ const topUpOptions = [
   { id: 5, name: "Weekly/Monthly Offer", hint: "gaming offer", image: "https://placehold.co/100x100.png", slug: "weekly-monthly-offer" },
   { id: 6, name: "Indonesia Server (UID)", hint: "gaming character", image: "https://placehold.co/100x100.png", slug: "indonesia-server-uid" },
   { id: 7, name: "FF ID Like (Daily 100 Max)", hint: "gaming social", image: "https://placehold.co/100x100.png", slug: "ff-id-like" },
+  { id: 8, name: "Level Up Pass", hint: "gaming pass", image: "https://placehold.co/100x100.png", slug: "level-up-pass" },
+  { id: 9, name: "Unipin Voucher (BD)", hint: "gaming voucher", image: "https://placehold.co/100x100.png", slug: "unipin-voucher-bd" },
 ];
 
 const socialMediaServices = [

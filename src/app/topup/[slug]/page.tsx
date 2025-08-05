@@ -33,6 +33,107 @@ const productData: { [key: string]: any } = {
       { id: '7590-diamond', name: '7590 Diamond', price: '4850 TK' },
       { id: '10120-diamond', name: '10120 Diamond', price: '6450 TK' },
     ]
+  },
+  'level-up-pass': {
+    name: 'Level Up Pass',
+    image: 'https://placehold.co/80x80.png',
+    category: 'Game / Top up',
+    rechargeOptions: [
+        { id: 'level-6', name: 'Level Up Package - Level 6', price: '40 TK' },
+        { id: 'level-10', name: 'Level Up Package - Level 10', price: '70 TK' },
+        { id: 'level-15', name: 'Level Up Package - Level 15', price: '70 TK' },
+        { id: 'level-20', name: 'Level Up Package - Level 20', price: '70 TK' },
+        { id: 'level-25', name: 'Level Up Package - Level 25', price: '70 TK' },
+        { id: 'level-30', name: 'Level Up Package - Level 30', price: '100 TK' },
+        { id: 'full-level-up', name: 'Full Level Up (1270 Diamond)', price: '400 TK' },
+    ]
+  },
+  'e-badge-evo-access-bd': {
+    name: 'E-Badge/Evo Access (BD)',
+    image: 'https://admin.topupbuzz.com/products/1748197834.jpg',
+    category: 'Game / Top up',
+    rechargeOptions: [
+        { id: '3-days-evo', name: '3 Days Evo Access', price: '70 TK' },
+        { id: '7-days-evo', name: '7 Days Evo Access', price: '110 TK' },
+        { id: '14-days-evo', name: '14 Days Evo Access', price: '210 TK' },
+        { id: '30-days-evo', name: '30 Days Evo Access', price: '300 TK' },
+    ]
+  },
+  'unipin-voucher-bd': {
+      name: 'Unipin Voucher (BD)',
+      image: 'https://placehold.co/80x80.png',
+      category: 'Game / Top up',
+      rechargeOptions: [
+        { id: 'weekly-voucher', name: 'Weekly Voucher', price: '155 TK' },
+        { id: 'monthly-voucher', name: 'Monthly Voucher', price: '770 TK' },
+        { id: '25-diamond-voucher', name: '25 Diamond Voucher', price: '22 TK' },
+        { id: '50-diamond-voucher', name: '50 Diamond Voucher', price: '38 TK' },
+        { id: '115-diamond-voucher', name: '115 Diamond Voucher', price: '80 TK' },
+        { id: '240-diamond-voucher', name: '240 Diamond Voucher', price: '160 TK' },
+        { id: '610-diamond-voucher', name: '610 Diamond Voucher', price: '400 TK' },
+        { id: '1240-diamond-voucher', name: '1240 Diamond Voucher', price: '800 TK' },
+        { id: '2530-diamond-voucher', name: '2530 Diamond Voucher', price: '1620 TK' },
+      ]
+  },
+  'airdrop-id-code': {
+      name: 'Airdrop (ID Code)',
+      image: 'https://placehold.co/80x80.png',
+      category: 'Game / Top up',
+      rechargeOptions: [
+        { id: 'airdrop-90', name: '0.99$ (90 BDT) Airdrop', price: '140 TK' },
+        { id: 'airdrop-190', name: '1.99$ (190 BDT) Airdrop', price: '280 TK' },
+      ]
+  },
+  'weekly-lite-bd-server': {
+      name: 'Weekly Lite (BD Server)',
+      image: 'https://placehold.co/80x80.png',
+      category: 'Game / Top up',
+      rechargeOptions: [
+        { id: '1x-weekly-lite', name: '1x Weekly Lite', price: '40 TK' },
+        { id: '2x-weekly-lite', name: '2x Weekly Lite', price: '80 TK' },
+        { id: '3x-weekly-lite', name: '3x Weekly Lite', price: '120 TK' },
+        { id: '5x-weekly-lite', name: '5x Weekly Lite', price: '200 TK' },
+      ]
+  },
+  'weekly-monthly-offer': {
+      name: 'Weekly/Monthly Offer',
+      image: 'https://placehold.co/80x80.png',
+      category: 'Game / Top up',
+      rechargeOptions: [
+        { id: 'weekly', name: 'Weekly', price: '155 TK' },
+        { id: '2x-weekly', name: '2X Weekly', price: '310 TK' },
+        { id: '3x-weekly', name: '3X Weekly', price: '465 TK' },
+        { id: '5x-weekly', name: '5X Weekly', price: '775 TK' },
+        { id: 'monthly', name: 'Monthly', price: '770 TK' },
+        { id: '2x-monthly', name: '2X Monthly', price: '1540 TK' },
+        { id: '1-weekly-1-monthly', name: '1Weekly + 1Monthly', price: '925 TK' },
+        { id: '4-weekly-1-monthly', name: '4Weekly + 1Monthly', price: '1390 TK' },
+      ]
+  },
+  'indonesia-server-uid': {
+      name: 'Indonesia Server (UID)',
+      image: 'https://placehold.co/80x80.png',
+      category: 'Game / Top up',
+      rechargeOptions: [
+        { id: '5-diamond-indo', name: '5 Diamond (Indo)', price: '12 TK' },
+        { id: '50-diamond-indo', name: '50 Diamond (Indo)', price: '70 TK' },
+        { id: '70-diamond-indo', name: '70 Diamond (Indo)', price: '90 TK' },
+        { id: '100-diamond-indo', name: '100 Diamond (Indo)', price: '140 TK' },
+        { id: '140-diamond-indo', name: '140 Diamond (Indo)', price: '180 TK' },
+        { id: '355-diamond-indo', name: '355 Diamond (Indo)', price: '440 TK' },
+        { id: '720-diamond-indo', name: '720 Diamond (Indo)', price: '880 TK' },
+        { id: '7290-diamond-indo', name: '7290Diamond (Indo)', price: '8800 TK' },
+        { id: 'weekly-indo', name: 'Weekly (Indo)', price: '270 TK' },
+        { id: 'monthly-indo', name: 'Monthly (Indo)', price: '820 TK' },
+      ]
+  },
+  'ff-id-like': {
+      name: 'FF ID Like (Daily 100 Max)',
+      image: 'https://placehold.co/80x80.png',
+      category: 'Game / Top up',
+      rechargeOptions: [
+        { id: '100-ff-like', name: '100 FF Like', price: '20 TK' },
+      ]
   }
 };
 
@@ -278,5 +379,3 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-
-    
