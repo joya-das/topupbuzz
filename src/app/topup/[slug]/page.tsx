@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube } from "lucide-react";
+import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube, Check } from "lucide-react";
 import Link from 'next/link';
 
 const productData: { [key: string]: any } = {
@@ -103,7 +103,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                 <Label
                   key={option.id}
                   htmlFor={option.id}
-                  className={`flex justify-between items-center p-3 rounded-lg border cursor-pointer transition-colors ${
+                  className={`relative flex justify-between items-center p-3 rounded-lg border cursor-pointer transition-colors ${
                     selectedOption === option.id
                       ? 'border-red-500 bg-red-50 dark:bg-red-900/20 dark:border-red-700'
                       : 'border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50'
@@ -112,6 +112,11 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                   <span className="text-sm text-gray-800 dark:text-gray-300">{option.name}</span>
                   <span className="font-semibold text-red-600 dark:text-red-500">{option.price}</span>
                   <RadioGroupItem value={option.id} id={option.id} className="sr-only" />
+                  {selectedOption === option.id && (
+                     <div className="absolute top-1 right-1 w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-white">
+                        <Check className="w-3 h-3" />
+                     </div>
+                  )}
                 </Label>
               ))}
             </RadioGroup>
@@ -137,7 +142,6 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
              </div>
              <Button className="w-full bg-[#0f1b2a] dark:bg-slate-800 text-white hover:bg-slate-700 dark:hover:bg-slate-700">
                 আপনার গেম আইডির নাম চেক
-                <span className="ml-2 bg-red-600 text-white text-xs px-2 py-0.5 rounded-md">সাহায্য লাগবে ?</span>
              </Button>
           </CardContent>
         </Card>
@@ -151,20 +155,24 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
             </CardHeader>
             <CardContent>
                 <RadioGroup value={selectedPayment} onValueChange={setSelectedPayment} className="grid grid-cols-2 gap-4">
-                    <Label htmlFor="wallet" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer relative transition-colors ${ selectedPayment === 'wallet' ? 'border-primary' : 'border-muted'}`}>
+                    <Label htmlFor="wallet" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer relative transition-colors ${ selectedPayment === 'wallet' ? 'border-red-500' : 'border-muted'}`}>
                         <RadioGroupItem value="wallet" id="wallet" className="peer sr-only" />
-                        <div className={`absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full transition-colors ${ selectedPayment === 'wallet' ? 'bg-red-500' : 'bg-gray-300'}`}>
-                           {selectedPayment === 'wallet' && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
-                        </div>
+                        {selectedPayment === 'wallet' && (
+                           <div className="absolute top-2 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-red-500">
+                              <Check className="w-3 h-3 text-white" />
+                           </div>
+                        )}
                         <Image src="https://placehold.co/120x40.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
                         <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md text-sm">Wallet Pay</span>
                     </Label>
 
-                    <Label htmlFor="instant" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer transition-colors ${ selectedPayment === 'instant' ? 'border-primary' : 'border-muted'}`}>
-                         <RadioGroupItem value="instant" id="instant" className="peer sr-only" />
-                        <div className={`absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full transition-colors ${ selectedPayment === 'instant' ? 'bg-red-500' : 'bg-gray-300'}`}>
-                           {selectedPayment === 'instant' && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
-                        </div>
+                    <Label htmlFor="instant" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer relative transition-colors ${ selectedPayment === 'instant' ? 'border-red-500' : 'border-muted'}`}>
+                        <RadioGroupItem value="instant" id="instant" className="peer sr-only" />
+                        {selectedPayment === 'instant' && (
+                           <div className="absolute top-2 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-red-500">
+                              <Check className="w-3 h-3 text-white" />
+                           </div>
+                        )}
                         <div className="flex gap-2">
                             <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="bKash" data-ai-hint="bkash logo" />
                             <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Nagad" data-ai-hint="nagad logo" />
