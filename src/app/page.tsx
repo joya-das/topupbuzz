@@ -5,17 +5,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import { DismissibleAlert } from "@/components/dismissible-alert";
-import { HomeIcon, Play, Compass, MessageCircle, Send, Phone, Facebook, Youtube } from "lucide-react";
+import { HomeIcon, Play, Compass, MessageCircle, Send, Phone, Facebook, Youtube, User } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const topUpOptions = [
-  { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character" },
-  { id: 2, name: "E-Badge/Evo Access (BD)", hint: "gaming badge" },
-  { id: 3, name: "Airdrop (ID Code)", hint: "gaming loot" },
-  { id: 4, name: "Weekly Lite (BD Server)", hint: "gaming currency" },
-  { id: 5, name: "Weekly/Monthly Offer", hint: "gaming offer" },
-  { id: 6, name: "Indonesia Server (UID)", hint: "gaming character" },
-  { id: 7, name: "FF ID Like (Daily 100 Max)", hint: "gaming social" },
+  { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character", image: "https://admin.topupbuzz.com/products/1735123003.jpg" },
+  { id: 2, name: "E-Badge/Evo Access (BD)", hint: "gaming badge", image: "https://admin.topupbuzz.com/products/1748197834.jpg" },
+  { id: 3, name: "Airdrop (ID Code)", hint: "gaming loot", image: "https://placehold.co/100x100.png" },
+  { id: 4, name: "Weekly Lite (BD Server)", hint: "gaming currency", image: "https://placehold.co/100x100.png" },
+  { id: 5, name: "Weekly/Monthly Offer", hint: "gaming offer", image: "https://placehold.co/100x100.png" },
+  { id: 6, name: "Indonesia Server (UID)", hint: "gaming character", image: "https://placehold.co/100x100.png" },
+  { id: 7, name: "FF ID Like (Daily 100 Max)", hint: "gaming social", image: "https://placehold.co/100x100.png" },
 ];
 
 const socialMediaServices = [
@@ -48,7 +48,10 @@ export default function Home() {
                 <span className="text-red-600">BUZZ</span>
               </h1>
             </div>
-            <Button variant="outline">Login</Button>
+            <Button variant="outline">
+              <User className="mr-2 h-4 w-4" />
+              Login
+            </Button>
           </div>
         </div>
       </header>
@@ -73,7 +76,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex aspect-[2/1] items-center justify-center p-0 overflow-hidden rounded-lg">
                        <Image
-                          src="https://placehold.co/800x400.png"
+                          src="https://admin.topupbuzz.com/banners/1752316763.jpg"
                           alt={`Slider image ${index + 1}`}
                           width={800}
                           height={400}
@@ -98,7 +101,7 @@ export default function Home() {
                   <CardContent className="p-4 flex-grow flex flex-col items-center justify-center">
                       <div className="w-[100px] h-[100px] mb-2 overflow-hidden rounded-lg">
                         <Image
-                            src={`https://placehold.co/100x100.png`}
+                            src={option.image}
                             alt={option.name}
                             width={100}
                             height={100}
@@ -260,3 +263,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
