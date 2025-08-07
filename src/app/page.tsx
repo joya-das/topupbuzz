@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import { DismissibleAlert } from "@/components/dismissible-alert";
-import { HomeIcon, Play, Compass, MessageCircle, Send, Phone, Facebook, Youtube, User, ShoppingCart, Codes, UserCircle } from "lucide-react";
+import { HomeIcon, Compass, MessageCircle, Send, Phone, Facebook, Youtube, User, ShoppingCart, UserCircle, ShoppingBag } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 
@@ -249,9 +249,13 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 right-0 bg-white/70 backdrop-blur-sm border-t border-gray-200 z-50 dark:bg-[#0f1b2a]/70 dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-around items-center h-16">
-            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+            <a href="#" className="flex flex-col items-center text-red-600 dark:text-red-500">
               <HomeIcon className="w-6 h-6" />
               <span className="text-xs">Home</span>
+            </a>
+            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+              <ShoppingBag className="w-6 h-6" />
+              <span className="text-xs">Add Money</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
               <ShoppingCart className="w-6 h-6" />
@@ -262,13 +266,6 @@ export default function Home() {
               <span className="text-xs">TopUp</span>
             </a>
             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
-                <div className="relative">
-                    <MessageCircle className="w-6 h-6" />
-                    <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
-                </div>
-              <span className="text-xs">Contact Us</span>
-            </a>
-             <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
               <UserCircle className="w-6 h-6" />
               <span className="text-xs">Account</span>
             </a>
