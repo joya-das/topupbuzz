@@ -330,8 +330,8 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                 <Phone className="w-6 h-6" />
               </Button>
             </TooltipTrigger>
-            <TooltipContent>
-              <p>SUPPORT!</p>
+            <TooltipContent side="left">
+              <p>সাহায্য লাগবে ?</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
