@@ -167,18 +167,18 @@ export default function Home() {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-2" align="end">
-            <div className="flex flex-col gap-2">
-              <Button variant="outline" size="sm" asChild>
-                <a href="#"><Facebook className="mr-2" /> Facebook</a>
+            <div className="flex gap-2">
+              <Button variant="outline" size="icon" asChild>
+                <a href="#"><Facebook /></a>
               </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a href="#"><MessageCircle className="mr-2" /> WhatsApp</a>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#"><MessageCircle /></a>
               </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a href="#"><Send className="mr-2" /> Telegram</a>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#"><Send /></a>
               </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a href="#"><Mail className="mr-2" /> Email</a>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#"><Mail /></a>
               </Button>
             </div>
           </PopoverContent>
@@ -243,5 +243,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

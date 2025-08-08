@@ -253,7 +253,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
           <CardContent className="font-bangla space-y-4">
              <div>
                 <Label htmlFor="game-id" className="text-card-foreground">এখানে গেমের আইডি কোড দিন</Label>
-                <div className="flex gap-2 mt-1">
+                <div className="flex flex-col gap-2 mt-1">
                     <Input type="text" id="game-id" placeholder="এখানে গেমের আইডি কোড দিন" className="bg-muted border-border focus:bg-background" />
                     <Button variant="outline" className='shrink-0'>আপনার গেম আইডির নাম চেক করুন</Button>
                 </div>
@@ -336,18 +336,18 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-2" align="end">
-              <div className="flex flex-col gap-2">
-                <Button variant="outline" size="sm" asChild>
-                  <a href="#"><Facebook className="mr-2" /> Facebook</a>
+              <div className="flex gap-2">
+                <Button variant="outline" size="icon" asChild>
+                  <a href="#"><Facebook /></a>
                 </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="#"><MessageCircle className="mr-2" /> WhatsApp</a>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="#"><MessageCircle /></a>
                 </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="#"><Send className="mr-2" /> Telegram</a>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="#"><Send /></a>
                 </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="#"><Mail className="mr-2" /> Email</a>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="#"><Mail /></a>
                 </Button>
               </div>
             </PopoverContent>
