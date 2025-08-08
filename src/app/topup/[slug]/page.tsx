@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, use } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -150,10 +150,9 @@ const productData: { [key: string]: any } = {
   }
 };
 
-export default function TopUpPage({ params: paramsPromise }: { params: Promise<{ slug: string }> }) {
+export default function TopUpPage({ params }: { params: { slug: string } }) {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
   const [selectedPayment, setSelectedPayment] = useState('wallet');
-  const params = use(paramsPromise);
 
 
   const slug = params.slug;
@@ -413,5 +412,3 @@ export default function TopUpPage({ params: paramsPromise }: { params: Promise<{
     </div>
   );
 }
-
-    
