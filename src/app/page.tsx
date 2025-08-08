@@ -5,10 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import { DismissibleAlert } from "@/components/dismissible-alert";
-import { HomeIcon, Compass, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Send, Mail, MessageCircle } from "lucide-react";
+import { HomeIcon, Compass, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Send, Mail, MessageCircle, ShoppingCart } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
 
 const topUpOptions = [
   { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character", image: "https://admin.topupbuzz.com/products/1735123003.jpg", slug: "free-fire-topup-bd" },
@@ -26,6 +28,15 @@ const moreGames = [
     { id: 1, name: "PUBG MOBILE", hint: "gaming pubg", image: "https://admin.topupbuzz.com/products/1736493511.jpg", slug: "pubg-mobile" },
     { id: 2, name: "FC MOBILE (EA SPORTS)", hint: "gaming fifa", image: "https://admin.topupbuzz.com/products/1736493505.jpg", slug: "fc-mobile" },
 ];
+
+const GooglePlayIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m10.4 12.6-2.8 4.2"/><path d="m14 12-3.4 5"/><path d="M12.6 10.4 8.4 7.6"/><path d="m14 17-3.4-5"/><path d="M8.4 16.8 12.3 14"/></svg>
+  );
+  
+const TelegramIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+  );
+  
 
 
 export default function Home() {
@@ -139,14 +150,14 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
           <a href="#" className="flex items-center gap-2 p-3 border border-border rounded-lg hover:bg-muted transition-colors">
-            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Google Play" data-ai-hint="google play logo" />
+            <GooglePlayIcon />
             <div>
                 <p className="font-bold">Download Our Mobile App</p>
                 <p className="text-sm text-primary">Click Here →</p>
             </div>
           </a>
           <a href="#" className="flex items-center gap-2 p-3 border border-border rounded-lg hover:bg-muted transition-colors">
-            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Telegram" data-ai-hint="telegram logo" />
+            <TelegramIcon />
             <div>
                 <p className="font-bold">Giveway & Offer Update</p>
                 <p className="text-sm text-primary">Join Telegram</p>
@@ -158,14 +169,20 @@ export default function Home() {
 
       <div className="fixed bottom-24 right-4 z-50">
         <Popover>
-          <PopoverTrigger asChild>
-            <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative group">
-                <div className="absolute -left-20 top-1/2 -translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                    SUPPORT!
-                </div>
-                <Phone className="w-6 h-6" />
-            </Button>
-          </PopoverTrigger>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <PopoverTrigger asChild>
+                  <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative animate-pulse">
+                      <Phone className="w-6 h-6" />
+                  </Button>
+                </PopoverTrigger>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>SUPPORT!</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <PopoverContent className="w-auto p-2" align="end">
             <div className="flex gap-2">
               <Button variant="outline" size="icon" asChild>
@@ -232,6 +249,10 @@ export default function Home() {
             <Link href="/topup" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Compass className="w-6 h-6" />
               <span className="text-xs">TopUp</span>
+            </Link>
+            <Link href="/orders" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+              <ShoppingCart className="w-6 h-6" />
+              <span className="text-xs">My Orders</span>
             </Link>
             <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Blocks className="w-6 h-6" />
