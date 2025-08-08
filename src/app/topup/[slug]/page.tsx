@@ -277,7 +277,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                               <Check className="w-3 h-3 text-white" />
                            </div>
                         )}
-                        <Image src="https://placehold.co/120x40.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
+                        <Image src="https://admin.topupbuzz.com/notices/1751691539_walletlogo.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
                         <span className="block w-full p-2 text-center bg-muted mt-2 rounded-b-md text-sm">Wallet Pay</span>
                     </Label>
 
@@ -288,11 +288,8 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                               <Check className="w-3 h-3 text-white" />
                            </div>
                         )}
-                        <div className="flex gap-2">
-                            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="bKash" data-ai-hint="bkash logo" />
-                            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Nagad" data-ai-hint="nagad logo" />
-                            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Rocket" data-ai-hint="rocket logo" />
-                        </div>
+                         <Image src="https://admin.topupbuzz.com/notices/1751691539_autopay.png" width={120} height={40} alt="Instant Pay" data-ai-hint="instant payment methods" />
+
                         <span className="block w-full p-2 text-center bg-muted mt-2 rounded-b-md text-sm">Instant Pay</span>
                     </Label>
                 </RadioGroup>
