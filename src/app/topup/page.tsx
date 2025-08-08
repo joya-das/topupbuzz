@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 
 const topUpOptions = [
@@ -70,32 +70,18 @@ export default function TopUpOnlyPage() {
       </main>
 
       <div className="fixed bottom-24 right-4 z-50">
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative group">
-                  <div className="absolute -left-20 top-1/2 -translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                      SUPPORT!
-                  </div>
-                  <Phone className="w-6 h-6" />
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative animate-pulse">
+                <Phone className="w-6 h-6" />
               </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-2" align="end">
-              <div className="flex gap-2">
-                <Button variant="outline" size="icon" asChild>
-                  <a href="#"><Facebook /></a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href="#"><MessageCircle /></a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href="#"><Send /></a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href="#"><Mail /></a>
-                </Button>
-              </div>
-            </PopoverContent>
-          </Popover>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>SUPPORT!</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
       
       <footer style={{background: '#1c2538', color: 'white'}} className="pt-12 pb-24">

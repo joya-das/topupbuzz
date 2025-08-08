@@ -8,7 +8,6 @@ import { DismissibleAlert } from "@/components/dismissible-alert";
 import { HomeIcon, Compass, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Send, Mail, MessageCircle, ShoppingCart } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 
@@ -168,38 +167,18 @@ export default function Home() {
       </main>
 
       <div className="fixed bottom-24 right-4 z-50">
-        <Popover>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <PopoverTrigger asChild>
-                  <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative animate-pulse">
-                      <Phone className="w-6 h-6" />
-                  </Button>
-                </PopoverTrigger>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>SUPPORT!</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <PopoverContent className="w-auto p-2" align="end">
-            <div className="flex gap-2">
-              <Button variant="outline" size="icon" asChild>
-                <a href="#"><Facebook /></a>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative animate-pulse">
+                <Phone className="w-6 h-6" />
               </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#"><MessageCircle /></a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#"><Send /></a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#"><Mail /></a>
-              </Button>
-            </div>
-          </PopoverContent>
-        </Popover>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>SUPPORT!</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
       
       <footer style={{background: '#1c2538', color: 'white'}} className="pt-12 pb-24">
