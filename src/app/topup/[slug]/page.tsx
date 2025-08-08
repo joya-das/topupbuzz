@@ -7,8 +7,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube, Check, Send, Compass, PlayCircle, Blocks } from "lucide-react";
+import { ChevronLeft, HomeIcon, Mail, MessageCircle, Phone, Wallet, Info, RefreshCw, Facebook, Youtube, Check, Send, Compass, PlayCircle, Blocks } from "lucide-react";
 import Link from 'next/link';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 const productData: { [key: string]: any } = {
   'free-fire-topup-bd': {
@@ -253,7 +254,10 @@ export default function TopUpPage({ params: paramsPromise }: { params: Promise<{
           <CardContent className="font-bangla space-y-4">
              <div>
                 <Label htmlFor="game-id" className="text-card-foreground">এখানে গেমের আইডি কোড দিন</Label>
-                <Input type="text" id="game-id" placeholder="এখানে গেমের আইডি কোড দিন" className="mt-1 bg-muted border-border focus:bg-background" />
+                <div className="flex gap-2 mt-1">
+                    <Input type="text" id="game-id" placeholder="এখানে গেমের আইডি কোড দিন" className="bg-muted border-border focus:bg-background" />
+                    <Button variant="outline" className='shrink-0'>আপনার গেম আইডির নাম চেক করুন</Button>
+                </div>
              </div>
           </CardContent>
         </Card>
@@ -323,14 +327,32 @@ export default function TopUpPage({ params: paramsPromise }: { params: Promise<{
       </main>
 
        <div className="fixed bottom-24 right-4 z-50">
-          <div className="relative group">
-              <div className="absolute -left-24 bottom-1/2 translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  SUPPORT!
-              </div>
-              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative group">
+                  <div className="absolute -left-20 top-1/2 -translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      SUPPORT!
+                  </div>
                   <Phone className="w-6 h-6" />
               </Button>
-          </div>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-2" align="end">
+              <div className="flex flex-col gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><Facebook className="mr-2" /> Facebook</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><MessageCircle className="mr-2" /> WhatsApp</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><Send className="mr-2" /> Telegram</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><Mail className="mr-2" /> Email</a>
+                </Button>
+              </div>
+            </PopoverContent>
+          </Popover>
       </div>
       
       <footer style={{background: '#1c2538', color: 'white'}} className="pt-12 pb-24">
@@ -391,3 +413,5 @@ export default function TopUpPage({ params: paramsPromise }: { params: Promise<{
     </div>
   );
 }
+
+    

@@ -3,8 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, ShoppingCart, UserCircle, ShoppingBag, Code, PlayCircle, Blocks } from "lucide-react";
+import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+
 
 const topUpOptions = [
   { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character", image: "https://admin.topupbuzz.com/products/1735123003.jpg", slug: "free-fire-topup-bd" },
@@ -68,14 +70,32 @@ export default function TopUpOnlyPage() {
       </main>
 
       <div className="fixed bottom-24 right-4 z-50">
-          <div className="relative group">
-              <div className="absolute -left-24 bottom-1/2 translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  SUPPORT!
-              </div>
-              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button size="icon" className="rounded-full bg-red-600 hover:bg-red-700 w-14 h-14 relative group">
+                  <div className="absolute -left-20 top-1/2 -translate-y-1/2 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      SUPPORT!
+                  </div>
                   <Phone className="w-6 h-6" />
               </Button>
-          </div>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-2" align="end">
+              <div className="flex flex-col gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><Facebook className="mr-2" /> Facebook</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><MessageCircle className="mr-2" /> WhatsApp</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><Send className="mr-2" /> Telegram</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="#"><Mail className="mr-2" /> Email</a>
+                </Button>
+              </div>
+            </PopoverContent>
+          </Popover>
       </div>
       
       <footer style={{background: '#1c2538', color: 'white'}} className="pt-12 pb-24">
@@ -136,3 +156,5 @@ export default function TopUpOnlyPage() {
     </div>
   );
 }
+
+    
