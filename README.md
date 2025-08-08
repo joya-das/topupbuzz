@@ -1,5 +1,1 @@
-# Firebase Studio
-
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+# TopupBuzz Is a Free fire Diamond Topup Website Build with TypeScript, NextJS, Tailwind CSS
