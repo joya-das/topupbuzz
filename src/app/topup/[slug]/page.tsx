@@ -36,7 +36,7 @@ const productData: { [key: string]: any } = {
   },
   'level-up-pass': {
     name: 'Level Up Pass',
-    image: 'https://placehold.co/80x80.png',
+    image: 'https://admin.topupbuzz.com/products/1748197834.jpg',
     category: 'Game / Top up',
     rechargeOptions: [
         { id: 'level-6', name: 'Level Up Package - Level 6', price: '40 TK' },
@@ -50,7 +50,7 @@ const productData: { [key: string]: any } = {
   },
   'e-badge-evo-access-bd': {
     name: 'E-Badge/Evo Access (BD)',
-    image: 'https://admin.topupbuzz.com/products/1748197834.jpg',
+    image: 'https://admin.topupbuzz.com/products/1753710252.png',
     category: 'Game / Top up',
     rechargeOptions: [
         { id: '3-days-evo', name: '3 Days Evo Access', price: '70 TK' },
@@ -61,7 +61,7 @@ const productData: { [key: string]: any } = {
   },
   'unipin-voucher-bd': {
       name: 'Unipin Voucher (BD)',
-      image: 'https://placehold.co/80x80.png',
+      image: 'https://admin.topupbuzz.com/products/1735123065.jpg',
       category: 'Game / Top up',
       rechargeOptions: [
         { id: 'weekly-voucher', name: 'Weekly Voucher', price: '155 TK' },
@@ -86,7 +86,7 @@ const productData: { [key: string]: any } = {
   },
   'weekly-lite-bd-server': {
       name: 'Weekly Lite (BD Server)',
-      image: 'https://placehold.co/80x80.png',
+      image: 'https://admin.topupbuzz.com/products/1735123183.png',
       category: 'Game / Top up',
       rechargeOptions: [
         { id: '1x-weekly-lite', name: '1x Weekly Lite', price: '40 TK' },
@@ -97,7 +97,7 @@ const productData: { [key: string]: any } = {
   },
   'weekly-monthly-offer': {
       name: 'Weekly/Monthly Offer',
-      image: 'https://placehold.co/80x80.png',
+      image: 'https://admin.topupbuzz.com/products/1735123209.jpg',
       category: 'Game / Top up',
       rechargeOptions: [
         { id: 'weekly', name: 'Weekly', price: '155 TK' },
@@ -112,7 +112,7 @@ const productData: { [key: string]: any } = {
   },
   'indonesia-server-uid': {
       name: 'Indonesia Server (UID)',
-      image: 'https://placehold.co/80x80.png',
+      image: 'https://admin.topupbuzz.com/products/1735123357.jpg',
       category: 'Game / Top up',
       rechargeOptions: [
         { id: '5-diamond-indo', name: '5 Diamond (Indo)', price: '12 TK' },
@@ -129,11 +129,23 @@ const productData: { [key: string]: any } = {
   },
   'ff-id-like': {
       name: 'FF ID Like (Daily 100 Max)',
-      image: 'https://placehold.co/80x80.png',
+      image: 'https://admin.topupbuzz.com/products/1742654820.jpg',
       category: 'Game / Top up',
       rechargeOptions: [
         { id: '100-ff-like', name: '100 FF Like', price: '20 TK' },
       ]
+  },
+  'pubg-mobile': {
+    name: 'PUBG MOBILE',
+    image: 'https://admin.topupbuzz.com/products/1736493511.jpg',
+    category: 'Game / Top up',
+    rechargeOptions: [],
+  },
+  'fc-mobile': {
+    name: 'FC MOBILE (EA SPORTS)',
+    image: 'https://admin.topupbuzz.com/products/1736493505.jpg',
+    category: 'Game / Top up',
+    rechargeOptions: [],
   }
 };
 
@@ -152,20 +164,20 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
   const selectedPrice = product.rechargeOptions.find((opt:any) => opt.id === selectedOption)?.price.split(' ')[0] || 0;
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-[#040d1c]">
-       <header className="bg-white/90 dark:bg-[#0f1b2a]/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+       <header className="bg-background/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-gray-800 dark:text-gray-200">
+            <Link href="/" className="text-foreground">
               <ChevronLeft className="w-6 h-6" />
             </Link>
             <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-xl font-bold text-foreground">
                  <span className="text-blue-600">TOPUP</span><span className="text-red-600">BUZZ</span>
               </h1>
             </div>
             <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" className="dark:bg-slate-800 dark:border-slate-700">
+                <Button variant="outline" size="sm">
                     <Wallet className="mr-2 h-4 w-4"/> 0৳
                 </Button>
                 <Image src="https://placehold.co/32x32.png" alt="User" width={32} height={32} className="rounded-full" data-ai-hint="user avatar" />
@@ -175,7 +187,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
       </header>
 
       <main className="flex-grow container mx-auto p-4 space-y-4 pb-32">
-        <Card className="overflow-hidden bg-white dark:bg-[#0f1b2a] dark:border-gray-800">
+        <Card className="overflow-hidden bg-card">
           <CardContent className="p-4 flex items-center gap-4">
             <Image
               src={product.image}
@@ -185,17 +197,17 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               className="rounded-lg"
             />
             <div>
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white">{product.name}</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{product.category}</p>
+              <h2 className="text-lg font-bold text-card-foreground">{product.name}</h2>
+              <p className="text-sm text-muted-foreground">{product.category}</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-[#0f1b2a] dark:border-gray-800">
+        <Card className="bg-card">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <span className="bg-[#0f1b2a] dark:bg-slate-700 text-white rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">1</span>
-              <span className="text-gray-900 dark:text-white">Select Recharge</span>
+              <span className="bg-primary text-primary-foreground rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">1</span>
+              <span className="text-card-foreground">Select Recharge</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -206,12 +218,12 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                   htmlFor={option.id}
                   className={`relative flex justify-between items-center p-3 rounded-lg border cursor-pointer transition-colors ${
                     selectedOption === option.id
-                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20 dark:border-red-700'
-                      : 'border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                      : 'border-border hover:bg-muted'
                   }`}
                 >
-                  <span className="text-sm text-gray-800 dark:text-gray-300">{option.name}</span>
-                  <span className="font-semibold text-red-600 dark:text-red-500">{option.price}</span>
+                  <span className="text-sm text-card-foreground">{option.name}</span>
+                  <span className="font-semibold text-red-600">{option.price}</span>
                   <RadioGroupItem value={option.id} id={option.id} className="sr-only" />
                   {selectedOption === option.id && (
                      <div className="absolute top-1 right-1 w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-white">
@@ -223,35 +235,35 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
             </RadioGroup>
             <div className="text-left mt-4">
               <a href="#" className="text-sm text-red-600 font-bangla hover:underline">
-                কিভাবে অর্ডার করবেন ?
+                কিভাবে টপআপ করবেন ?
               </a>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-[#0f1b2a] dark:border-gray-800">
+        <Card className="bg-card">
            <CardHeader>
             <CardTitle className="flex items-center">
-               <span className="bg-[#0f1b2a] dark:bg-slate-700 text-white rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">2</span>
-               <span className="text-gray-900 dark:text-white">Account Info</span>
+               <span className="bg-primary text-primary-foreground rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">2</span>
+               <span className="text-card-foreground">Account Info</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="font-bangla space-y-4">
              <div>
-                <Label htmlFor="game-id" className="text-gray-800 dark:text-gray-300">এখানে গেমের আইডি কোড দিন</Label>
-                <Input type="text" id="game-id" placeholder="এখানে গেমের আইডি কোড দিন" className="mt-1 bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:bg-white dark:focus:bg-black" />
+                <Label htmlFor="game-id" className="text-card-foreground">এখানে গেমের আইডি কোড দিন</Label>
+                <Input type="text" id="game-id" placeholder="এখানে গেমের আইডি কোড দিন" className="mt-1 bg-muted border-border focus:bg-background" />
              </div>
-             <Button className="w-full bg-[#0f1b2a] dark:bg-slate-800 text-white hover:bg-slate-700 dark:hover:bg-slate-700">
+             <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                 আপনার গেম আইডির নাম চেক
              </Button>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-[#0f1b2a] dark:border-gray-800">
+        <Card className="bg-card">
             <CardHeader>
                 <CardTitle className="flex items-center">
-                <span className="bg-[#0f1b2a] dark:bg-slate-700 text-white rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">3</span>
-                <span className="text-gray-900 dark:text-white">Select one option</span>
+                <span className="bg-primary text-primary-foreground rounded-full h-6 w-6 flex items-center justify-center text-sm mr-2">3</span>
+                <span className="text-card-foreground">Select one option</span>
                 </CardTitle>
             </CardHeader>
             <CardContent>
@@ -264,7 +276,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                            </div>
                         )}
                         <Image src="https://placehold.co/120x40.png" width={120} height={40} alt="Wallet" data-ai-hint="topupbuzz wallet logo" />
-                        <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md text-sm">Wallet Pay</span>
+                        <span className="block w-full p-2 text-center bg-muted mt-2 rounded-b-md text-sm">Wallet Pay</span>
                     </Label>
 
                     <Label htmlFor="instant" className={`flex flex-col items-center justify-center rounded-md border-2 p-4 cursor-pointer relative transition-colors ${ selectedPayment === 'instant' ? 'border-red-500' : 'border-muted'}`}>
@@ -279,10 +291,10 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                             <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Nagad" data-ai-hint="nagad logo" />
                             <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Rocket" data-ai-hint="rocket logo" />
                         </div>
-                        <span className="block w-full p-2 text-center bg-gray-200 dark:bg-gray-700 mt-2 rounded-b-md text-sm">Instant Pay</span>
+                        <span className="block w-full p-2 text-center bg-muted mt-2 rounded-b-md text-sm">Instant Pay</span>
                     </Label>
                 </RadioGroup>
-                <div className="font-bangla space-y-2 mt-4 text-sm text-gray-800 dark:text-gray-300">
+                <div className="font-bangla space-y-2 mt-4 text-sm text-card-foreground">
                     <div className="flex items-center gap-2">
                         <Info className="w-4 h-4" />
                         <span>আপনার অ্যাকাউন্ট ব্যালেন্স ৳ 0.00</span>
@@ -293,15 +305,15 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                         <span>প্রোডাক্ট কিনতে আপনার প্রয়োজন ৳ {selectedPrice}</span>
                     </div>
                 </div>
-                <Button className="w-full mt-4 bg-[#0f1b2a] dark:bg-slate-800 text-white hover:bg-slate-700 dark:hover:bg-slate-700">Buy Now</Button>
+                <Button className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90">Buy Now</Button>
             </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-[#0f1b2a] dark:border-gray-800 font-bangla">
+        <Card className="bg-card font-bangla">
             <CardHeader>
-                <CardTitle className="text-gray-900 dark:text-white">Rules & Conditions</CardTitle>
+                <CardTitle className="text-card-foreground">Rules & Conditions</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-sm text-gray-800 dark:text-gray-300">
+            <CardContent className="space-y-2 text-sm text-card-foreground">
                 <p>⦿ শুধুমাত্র Bangladesh সার্ভারে ID Code দিয়ে টপ আপ হবে</p>
                 <p>⦿ Player ID ভুল দিয়ে Diamond না পেলে TopUp Buzz কর্তৃপক্ষ দায়ী নয়</p>
                 <p>⦿ Order কমপ্লিট হওয়ার পরেও আইডিতে ডাইমন্ড না গেলে চেক করার জন্য ID Pass দিতে হবে</p>
@@ -317,12 +329,12 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
           </Button>
       </div>
       
-      <footer className="bg-[#0f1b2a] text-white pt-12 pb-24">
+      <footer className="bg-secondary text-secondary-foreground pt-12 pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-lg font-bold mb-4">SUPPORT</h3>
-                    <a href="#" className="flex items-center gap-4 p-4 border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
+                    <a href="#" className="flex items-center gap-4 p-4 border border-border rounded-lg hover:bg-muted transition-colors">
                         <Send className="w-6 h-6" />
                         <div>
                             <p className="text-sm">8AM - 12.00PM</p>
@@ -335,41 +347,41 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
                     <p className="font-bold">TopUp Buzz</p>
                     <p className="text-sm">House #80 (13rd Floor) Road # 17, Nikanjia-5 Dhaka</p>
                     <div className="flex gap-4 mt-4">
-                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
+                        <a href="#" className="p-2 border border-border rounded-md hover:bg-muted transition-colors">
                             <Facebook className="w-6 h-6" />
                         </a>
-                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
+                        <a href="#" className="p-2 border border-border rounded-md hover:bg-muted transition-colors">
                             <Youtube className="w-6 h-6" />
                         </a>
                     </div>
                 </div>
             </div>
-            <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+            <div className="border-t border-border mt-8 pt-6 text-center text-sm">
                 <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
             </div>
         </div>
       </footer>
 
-      <footer className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-200 z-50 dark:bg-[#0f1b2a]/90 dark:border-gray-800">
+      <footer className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm border-t border-border z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-around items-center h-16">
-            <Link href="/" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+            <Link href="/" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <HomeIcon className="w-6 h-6" />
               <span className="text-xs">Home</span>
             </Link>
-            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <ShoppingBag className="w-6 h-6" />
               <span className="text-xs">Add Money</span>
             </a>
-            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <ShoppingCart className="w-6 h-6" />
               <span className="text-xs">My Orders</span>
             </a>
-            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Code className="w-6 h-6" />
               <span className="text-xs">My Codes</span>
             </a>
-            <a href="#" className="flex flex-col items-center text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <UserCircle className="w-6 h-6" />
               <span className="text-xs">My Account</span>
             </a>
