@@ -9,7 +9,7 @@ import Link from "next/link";
 const topUpOptions = [
   { id: 1, name: "Free Fire TopUp (BD)", hint: "gaming character", image: "https://admin.topupbuzz.com/products/1735123003.jpg", slug: "free-fire-topup-bd" },
   { id: 2, name: "E-Badge/Evo Access (BD)", hint: "gaming badge", image: "https://admin.topupbuzz.com/products/1753710252.png", slug: "e-badge-evo-access-bd" },
-  { id: 3, name: "Airdrop (ID Code)", hint: "gaming loot", image: "https://placehold.co/100x100.png", slug: "airdrop-id-code" },
+  { id: 3, name: "Airdrop (ID Code)", hint: "gaming loot", image: "https://admin.topupbuzz.com/products/1735123003.jpg", slug: "airdrop-id-code" },
   { id: 4, name: "Weekly Lite (BD Server)", hint: "gaming currency", image: "https://admin.topupbuzz.com/products/1735123183.png", slug: "weekly-lite-bd-server" },
   { id: 5, name: "Weekly/Monthly Offer", hint: "gaming offer", image: "https://admin.topupbuzz.com/products/1735123209.jpg", slug: "weekly-monthly-offer" },
   { id: 6, name: "Indonesia Server (UID)", hint: "gaming character", image: "https://admin.topupbuzz.com/products/1735123357.jpg", slug: "indonesia-server-uid" },

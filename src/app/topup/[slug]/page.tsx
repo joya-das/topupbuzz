@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube, Check, Send } from "lucide-react";
+import { ChevronLeft, HomeIcon, ShoppingCart, Code, UserCircle, Phone, Wallet, User, ShoppingBag, Info, RefreshCw, AlertCircle, Facebook, Youtube, Check, Send, Compass } from "lucide-react";
 import Link from 'next/link';
 
 const productData: { [key: string]: any } = {
@@ -77,7 +77,7 @@ const productData: { [key: string]: any } = {
   },
   'airdrop-id-code': {
       name: 'Airdrop (ID Code)',
-      image: 'https://placehold.co/80x80.png',
+      image: 'https://admin.topupbuzz.com/products/1735123003.jpg',
       category: 'Game / Top up',
       rechargeOptions: [
         { id: 'airdrop-90', name: '0.99$ (90 BDT) Airdrop', price: '140 TK' },
@@ -135,7 +135,7 @@ const productData: { [key: string]: any } = {
         { id: '100-ff-like', name: '100 FF Like', price: '20 TK' },
       ]
   },
-  'pubg-mobile': {
+    'pubg-mobile': {
     name: 'PUBG MOBILE',
     image: 'https://admin.topupbuzz.com/products/1736493511.jpg',
     category: 'Game / Top up',
@@ -362,7 +362,7 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
         </div>
       </footer>
 
-      <footer className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm border-t border-border z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm border-t border-border z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-around items-center h-16">
             <Link href="/" className="flex flex-col items-center text-muted-foreground hover:text-primary">
@@ -377,17 +377,17 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               <ShoppingCart className="w-6 h-6" />
               <span className="text-xs">My Orders</span>
             </a>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <Code className="w-6 h-6" />
-              <span className="text-xs">My Codes</span>
-            </a>
+            <Link href="/topup" className="flex flex-col items-center text-red-600 dark:text-red-500">
+              <Compass className="w-6 h-6" />
+              <span className="text-xs">TopUp</span>
+            </Link>
             <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <UserCircle className="w-6 h-6" />
-              <span className="text-xs">My Account</span>
+              <span className="text-xs">Account</span>
             </a>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
