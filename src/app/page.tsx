@@ -21,18 +21,6 @@ const topUpOptions = [
   { id: 9, name: "Unipin Voucher (BD)", hint: "gaming voucher", image: "https://admin.topupbuzz.com/products/1735123065.jpg", slug: "unipin-voucher-bd" },
 ];
 
-const socialMediaServices = [
-  { id: 1, name: "Facebook Page Like/Followers", hint: "social facebook", slug: "fb-page-like-followers" },
-  { id: 2, name: "Facebook React Post/Photos", hint: "social facebook", slug: "fb-react-post-photos" },
-  { id: 3, name: "Facebook ID Followers", hint: "social facebook", slug: "fb-id-followers" },
-  { id: 4, name: "TikTok Account Followers", hint: "social tiktok", slug: "tiktok-followers" },
-  { id: 5, name: "TikTok Video Views", hint: "social tiktok", slug: "tiktok-views" },
-  { id: 6, name: "TikTok Video Likes", hint: "social tiktok", slug: "tiktok-likes" },
-  { id: 7, name: "Youtube Subscribe", hint: "social youtube", slug: "youtube-subscribe" },
-  { id: 8, name: "Youtube Video Views", hint: "social youtube", slug: "youtube-views" },
-  { id: 9, name: "Youtube Video Likes", hint: "social youtube", slug: "youtube-likes" },
-];
-
 const moreGames = [
     { id: 1, name: "PUBG MOBILE", hint: "gaming pubg", image: "https://admin.topupbuzz.com/products/1736493511.jpg", slug: "pubg-mobile" },
     { id: 2, name: "FC MOBILE (EA SPORTS)", hint: "gaming fifa", image: "https://admin.topupbuzz.com/products/1736493505.jpg", slug: "fc-mobile" },
@@ -124,31 +112,6 @@ export default function Home() {
         </div>
 
         <div>
-            <h2 className="text-2xl font-bold text-center mb-6 mt-8 text-foreground">Social Media Service</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4">
-            {socialMediaServices.map((service) => (
-              <Link href={`/topup/${service.slug}`} key={service.id}>
-                <Card className="overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col group items-center text-center cursor-pointer h-full bg-card">
-                  <CardContent className="p-4 flex-grow flex flex-col items-center justify-center">
-                      <div className="w-[100px] h-[100px] mb-2 overflow-hidden rounded-lg bg-muted">
-                        <Image
-                            src={`https://placehold.co/100x100.png`}
-                            alt={service.name}
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            data-ai-hint={service.hint}
-                        />
-                      </div>
-                      <p className="text-sm font-medium text-card-foreground">{service.name}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-            </div>
-        </div>
-
-        <div>
             <h2 className="text-2xl font-bold text-center mb-6 mt-8 text-foreground">More Games</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4 justify-center">
             {moreGames.map((game) => (
@@ -190,10 +153,6 @@ export default function Home() {
           </a>
         </div>
         
-        <div className="mt-8 p-4 h-32 rounded-lg bg-muted/50">
-            {/* Placeholder for ad */}
-        </div>
-
       </main>
 
       <div className="fixed bottom-24 right-4 z-50">
@@ -235,7 +194,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
-                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Tec Mahal</p>
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
             </div>
         </div>
       </footer>
@@ -247,7 +206,7 @@ export default function Home() {
               <HomeIcon className="w-6 h-6" />
               <span className="text-xs">Home</span>
             </Link>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+            <a href="https://youtu.be/OSE4qFSRqgs" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <PlayCircle className="w-6 h-6" />
               <span className="text-xs">Tutorial</span>
             </a>

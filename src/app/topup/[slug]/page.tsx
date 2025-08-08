@@ -361,7 +361,7 @@ export default function TopUpPage({ params: paramsPromise }: { params: Promise<{
                 </div>
             </div>
             <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
-                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Tec Mahal</p>
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
             </div>
         </div>
       </footer>
@@ -373,7 +373,7 @@ export default function TopUpPage({ params: paramsPromise }: { params: Promise<{
               <HomeIcon className="w-6 h-6" />
               <span className="text-xs">Home</span>
             </Link>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+            <a href="https://youtu.be/OSE4qFSRqgs" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <PlayCircle className="w-6 h-6" />
               <span className="text-xs">Tutorial</span>
             </a>
