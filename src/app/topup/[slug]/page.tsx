@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { ChevronLeft, HomeIcon, Mail, MessageCircle, Phone, Wallet, Info, RefreshCw, Facebook, Youtube, Check, Send, Compass, PlayCircle, Blocks } from "lucide-react";
+import { ChevronLeft, HomeIcon, Mail, MessageCircle, Phone, Wallet, Info, RefreshCw, Facebook, Youtube, Check, Send, Compass, PlayCircle, Blocks, ShoppingCart } from "lucide-react";
 import Link from 'next/link';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
@@ -385,10 +385,14 @@ export default function TopUpPage({ params }: { params: { slug: string } }) {
               <Compass className="w-6 h-6" />
               <span className="text-xs">TopUp</span>
             </Link>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+            <Link href="/orders" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+                <ShoppingCart className="w-6 h-6" />
+                <span className="text-xs">My Orders</span>
+            </Link>
+            <Link href="/contact" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Blocks className="w-6 h-6" />
               <span className="text-xs">Contact Us</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

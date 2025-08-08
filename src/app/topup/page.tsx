@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Mail, MessageCircle } from "lucide-react";
+import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, PlayCircle, Blocks, Mail, MessageCircle, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -132,10 +132,14 @@ export default function TopUpOnlyPage() {
               <Compass className="w-6 h-6" />
               <span className="text-xs">TopUp</span>
             </Link>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+            <Link href="/orders" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+                <ShoppingCart className="w-6 h-6" />
+                <span className="text-xs">My Orders</span>
+            </Link>
+            <Link href="/contact" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Blocks className="w-6 h-6" />
               <span className="text-xs">Contact Us</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

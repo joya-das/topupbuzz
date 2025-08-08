@@ -233,10 +233,10 @@ export default function Home() {
               <ShoppingCart className="w-6 h-6" />
               <span className="text-xs">My Orders</span>
             </Link>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
+            <Link href="/contact" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Blocks className="w-6 h-6" />
               <span className="text-xs">Contact Us</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
