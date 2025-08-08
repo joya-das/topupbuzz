@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, ShoppingCart, UserCircle, ShoppingBag, Code } from "lucide-react";
+import { HomeIcon, Compass, Send, Phone, Facebook, Youtube, User, ShoppingCart, UserCircle, ShoppingBag, Code, PlayCircle, Blocks } from "lucide-react";
 import Link from "next/link";
 
 const topUpOptions = [
@@ -78,12 +78,12 @@ export default function TopUpOnlyPage() {
           </div>
       </div>
       
-      <footer className="bg-secondary text-secondary-foreground pt-12 pb-24">
+      <footer style={{background: '#1c2538', color: 'white'}} className="pt-12 pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-lg font-bold mb-4">SUPPORT</h3>
-                    <a href="#" className="flex items-center gap-4 p-4 border border-border rounded-lg hover:bg-muted transition-colors">
+                    <a href="#" className="flex items-center gap-4 p-3 border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
                         <Send className="w-6 h-6" />
                         <div>
                             <p className="text-sm">8AM - 12.00PM</p>
@@ -96,17 +96,17 @@ export default function TopUpOnlyPage() {
                     <p className="font-bold">TopUp Buzz</p>
                     <p className="text-sm">House #80 (13rd Floor) Road # 17, Nikanjia-5 Dhaka</p>
                     <div className="flex gap-4 mt-4">
-                        <a href="#" className="p-2 border border-border rounded-md hover:bg-muted transition-colors">
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
                             <Facebook className="w-6 h-6" />
                         </a>
-                        <a href="#" className="p-2 border border-border rounded-md hover:bg-muted transition-colors">
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
                             <Youtube className="w-6 h-6" />
                         </a>
                     </div>
                 </div>
             </div>
-            <div className="border-t border-border mt-8 pt-6 text-center text-sm">
-                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
+            <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Tec Mahal</p>
             </div>
         </div>
       </footer>
@@ -119,20 +119,16 @@ export default function TopUpOnlyPage() {
               <span className="text-xs">Home</span>
             </Link>
             <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <ShoppingBag className="w-6 h-6" />
-              <span className="text-xs">Add Money</span>
+              <PlayCircle className="w-6 h-6" />
+              <span className="text-xs">Tutorial</span>
             </a>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <ShoppingCart className="w-6 h-6" />
-              <span className="text-xs">My Orders</span>
-            </a>
-            <Link href="/topup" className="flex flex-col items-center text-red-600 dark:text-red-500">
+            <Link href="/topup" className="flex flex-col items-center text-primary">
               <Compass className="w-6 h-6" />
               <span className="text-xs">TopUp</span>
             </Link>
             <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <UserCircle className="w-6 h-6" />
-              <span className="text-xs">Account</span>
+              <Blocks className="w-6 h-6" />
+              <span className="text-xs">Contact Us</span>
             </a>
           </div>
         </div>

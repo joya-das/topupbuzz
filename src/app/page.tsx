@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import { DismissibleAlert } from "@/components/dismissible-alert";
-import { HomeIcon, Compass, MessageCircle, Send, Phone, Facebook, Youtube, User, ShoppingCart, UserCircle, ShoppingBag, Code } from "lucide-react";
+import { HomeIcon, Compass, MessageCircle, Send, Phone, Facebook, Youtube, User, ShoppingCart, UserCircle, ShoppingBag, Code, PlayCircle, Blocks } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 
@@ -173,33 +173,27 @@ export default function Home() {
             </div>
         </div>
 
-        <div className="flex justify-center items-center gap-4 mt-8">
-          <a href="#" className="transition-transform hover:scale-105">
-            <Image
-              src="https://placehold.co/180x60.png"
-              alt="Get it on Google Play"
-              width={180}
-              height={60}
-              className="rounded-lg"
-              data-ai-hint="google play badge"
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <a href="#" className="flex items-center gap-2 p-3 border border-border rounded-lg hover:bg-muted transition-colors">
+            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Google Play" data-ai-hint="google play logo" />
+            <div>
+                <p className="font-bold">Download Our Mobile App</p>
+                <p className="text-sm text-primary">Click Here →</p>
+            </div>
           </a>
-          <a href="#" className="transition-transform hover:scale-105">
-            <Image
-              src="https://placehold.co/180x60.png"
-              alt="Download on the App Store"
-              width={180}
-              height={60}
-              className="rounded-lg"
-              data-ai-hint="app store badge"
-            />
+          <a href="#" className="flex items-center gap-2 p-3 border border-border rounded-lg hover:bg-muted transition-colors">
+            <Image src="https://placehold.co/40x40.png" width={40} height={40} alt="Telegram" data-ai-hint="telegram logo" />
+            <div>
+                <p className="font-bold">Giveway & Offer Update</p>
+                <p className="text-sm text-primary">Join Telegram</p>
+            </div>
           </a>
+        </div>
+        
+        <div className="mt-8 p-4 h-32 rounded-lg bg-muted/50">
+            {/* Placeholder for ad */}
         </div>
 
-        <div className="mt-8 p-4 rounded-lg bg-red-800 text-white text-center font-bangla">
-            <p className="font-bold">ফেসবুক, ইউটিউব, টিকটক সহ সকল ধরনের Social Media সার্ভিস লাগলে আমাদের নতুন সাইটে অর্ডার করুন</p>
-            <p>এখানে ক্লিক করুন</p>
-        </div>
       </main>
 
       <div className="fixed bottom-24 right-4 z-50">
@@ -213,12 +207,12 @@ export default function Home() {
           </div>
       </div>
       
-      <footer className="bg-secondary text-secondary-foreground pt-12 pb-24">
+      <footer style={{background: '#1c2538', color: 'white'}} className="pt-12 pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-lg font-bold mb-4">SUPPORT</h3>
-                    <a href="#" className="flex items-center gap-4 p-4 border border-border rounded-lg hover:bg-muted transition-colors">
+                    <a href="#" className="flex items-center gap-4 p-3 border border-white/20 rounded-lg hover:bg-white/10 transition-colors">
                         <Send className="w-6 h-6" />
                         <div>
                             <p className="text-sm">8AM - 12.00PM</p>
@@ -231,17 +225,17 @@ export default function Home() {
                     <p className="font-bold">TopUp Buzz</p>
                     <p className="text-sm">House #80 (13rd Floor) Road # 17, Nikanjia-5 Dhaka</p>
                     <div className="flex gap-4 mt-4">
-                        <a href="#" className="p-2 border border-border rounded-md hover:bg-muted transition-colors">
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
                             <Facebook className="w-6 h-6" />
                         </a>
-                        <a href="#" className="p-2 border border-border rounded-md hover:bg-muted transition-colors">
+                        <a href="#" className="p-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors">
                             <Youtube className="w-6 h-6" />
                         </a>
                     </div>
                 </div>
             </div>
-            <div className="border-t border-border mt-8 pt-6 text-center text-sm">
-                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Shozon Roy</p>
+            <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+                <p>&copy; Copyright 2022. All Rights Reserved. Developed by Tec Mahal</p>
             </div>
         </div>
       </footer>
@@ -249,25 +243,21 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm border-t border-border z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-around items-center h-16">
-            <Link href="/" className="flex flex-col items-center text-red-600 dark:text-red-500">
+            <Link href="/" className="flex flex-col items-center text-primary">
               <HomeIcon className="w-6 h-6" />
               <span className="text-xs">Home</span>
             </Link>
             <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <ShoppingBag className="w-6 h-6" />
-              <span className="text-xs">Add Money</span>
-            </a>
-            <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <ShoppingCart className="w-6 h-6" />
-              <span className="text-xs">My Orders</span>
+              <PlayCircle className="w-6 h-6" />
+              <span className="text-xs">Tutorial</span>
             </a>
             <Link href="/topup" className="flex flex-col items-center text-muted-foreground hover:text-primary">
               <Compass className="w-6 h-6" />
               <span className="text-xs">TopUp</span>
             </Link>
             <a href="#" className="flex flex-col items-center text-muted-foreground hover:text-primary">
-              <UserCircle className="w-6 h-6" />
-              <span className="text-xs">Account</span>
+              <Blocks className="w-6 h-6" />
+              <span className="text-xs">Contact Us</span>
             </a>
           </div>
         </div>
