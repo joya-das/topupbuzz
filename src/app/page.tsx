@@ -9,6 +9,7 @@ import { HomeIcon, Compass, Phone, Facebook, Youtube, User, PlayCircle, Blocks, 
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 
 const topUpOptions = [
@@ -61,6 +62,14 @@ export default function Home() {
       </header>
 
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+        <Alert className="bg-gradient-to-r from-red-600 to-red-800 text-white border-none font-bangla rounded-lg p-6 text-center">
+            <AlertTitle className="font-bold text-xl">Notice:</AlertTitle>
+            <AlertDescription className="text-white/90">
+                এটি শুধু ডেমো সাইট কেউ এটার জন্য কারো সাথে কোনরকম লেনদেন করবেন না, এই রকম ফুল এডমিন কন্ট্রোল topup website লাগলে যোগাযোগ করুন আ্যডমিনঃ 
+                <a href="https://t.me/shozonroy2" className="underline font-semibold hover:text-white" target="_blank" rel="noopener noreferrer"> Shozon Roy </a>
+                এর মধ্যে ধন্যবাদ।
+            </AlertDescription>
+        </Alert>
         <DismissibleAlert />
 
         <Carousel 
