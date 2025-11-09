@@ -1,5 +1,5 @@
-# Firebase Studio
+## TopupBuzz 
+Topupbuzz Is a Free fire Diamond Topup Website Build with TypeScript, NextJS, Tailwind CSS
 
-This is a NextJS starter in Firebase Studio.
 
-To get started, take a look at src/app/page.tsx.
+## Live Demo: https://topupbuzz.vercel.app/
